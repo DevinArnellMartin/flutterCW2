@@ -5,8 +5,8 @@
     "name": "Flutter",
     "request": "launch",
     "type": "dart",
-    "program": "lib/main.dart",
-    "cwd": "F:/flutter_projects/flutter_application"
+    "program": "lib//homeDart.dart",
+    "cwd": "F:/flutter_application"
   }
 ]
 }
