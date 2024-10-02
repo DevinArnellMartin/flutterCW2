@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-
 void main() {
   runApp(const RunMyApp());
 }
-
 class RunMyApp extends StatelessWidget {
   const RunMyApp({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       home: FadeTxt(),
     );
   }
 }
-
 class FadeTxt extends StatefulWidget {
   const FadeTxt({super.key});
 
@@ -24,11 +20,11 @@ class FadeTxt extends StatefulWidget {
 }
 
 class _FadeTxtState extends State<FadeTxt> {
-  bool _isVisible = true;
+  bool boolVis = true;
 
-  void toggleVisibility() {
+  void toggle() { //visibility 
     setState(() {
-      _isVisible = !_isVisible;
+      boolVis = !boolVis;
     });
   }
 
@@ -40,9 +36,9 @@ class _FadeTxtState extends State<FadeTxt> {
       ),
       body: Center(
         child: GestureDetector(
-          onTap: toggleVisibility, 
+          onTap: toggle, 
           child: AnimatedOpacity(
-            opacity: _isVisible ? 1.0 : 0.0,
+            opacity: boolVis ? 1.0 : 0.0,
             duration: const Duration(seconds: 4),
             curve: Curves.easeInOutCirc, 
             child: const Text(
@@ -53,7 +49,7 @@ class _FadeTxtState extends State<FadeTxt> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: toggleVisibility,
+        onPressed: toggle,
         child: const Icon(Icons.play_arrow),
       ),
     );
