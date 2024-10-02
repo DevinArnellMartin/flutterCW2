@@ -10,11 +10,13 @@ class Home extends StatelessWidget {
     'Ackee & Saltfish',
   ];
 
+  const Home({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Recipes'),
+        title: const Text('Recipes'),
       ),
       body: ListView.builder(
         itemCount: recipes.length,
